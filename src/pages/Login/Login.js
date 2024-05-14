@@ -30,7 +30,7 @@ const Login = () => {
         console.log('Identifiants de connexion invalides.')
       }
     }catch (error) {
-      console.log("Échec de l'authentification. Veuillez vérifier vos identifiants.". error );
+      console.log("Échec de l'authentification. Veuillez vérifier vos identifiants." , error );
     }
   }
   const handleLoginSubmit = async (e) => {

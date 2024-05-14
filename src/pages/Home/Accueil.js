@@ -2,7 +2,6 @@ import React from "react";
 import CardCategorie from "../../components/cards/CardCategorie";
 import CardIngredient from "../../components/cards/CardIngredient";
 
-import { jwtDecode } from 'jwt-decode'
 import SearchResults from "../../components/SearchResults";
 
 

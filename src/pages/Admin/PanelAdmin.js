@@ -100,7 +100,7 @@ return (
                   <li>
                     <img
                       src={`http://localhost:8000/api/assets/recettes/${recette.picture}`}
-                      alt={`Image de ${recette.title}`}
+                      alt={`${recette.title}`}
                       className="w-16 mx-auto"
                     />
                   </li>

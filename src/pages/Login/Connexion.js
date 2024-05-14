@@ -8,7 +8,7 @@ const Connexion = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const currentUrl = window.location.pathname;
+  // const currentUrl = window.location.pathname;
 
   const storeToken = (token) => {
     localStorage.setItem("token", token);
@@ -22,6 +22,7 @@ const Connexion = () => {
   //     return null;
   //   }
   // }
+  console.log(error);
   const login = async (email, password) => {
     // e.preventDefault();
     try {
