@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const SearchResults = () => {
@@ -35,12 +35,12 @@ const SearchResults = () => {
     }
   }, [ingredients]);
 
-  const filtrerParCategorie = (categorie) => {
+  const filtrerParCategorie = useCallback((categorie) => {
     const recettesFiltrees = getRecette.filter(
       (recette) => recette.categorie?.name === categorie
     );
     return recettesFiltrees;
-  };
+  },[]);
 
   const handleFiltreCategorie = (categorie) => {
     setFiltreCategorie(categorie);

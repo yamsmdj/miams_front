@@ -174,7 +174,7 @@ const Insert = () => {
           />
           <p>(Attention : Nom recette = Nom image // type d'image = jpg // )</p>
         </div>
-          {selectedImage === null ? "" : <img width={100} height={100} src={selectedImage} alt='image' />}
+          {selectedImage === null ? "" : <img width={100} height={100} src={selectedImage} alt='particule' />}
         <div className="flex flex-wrap w-1/2 justify-around mx-auto">
           {etapes.map((etape, index) => (
             <div key={index} className="my-2">

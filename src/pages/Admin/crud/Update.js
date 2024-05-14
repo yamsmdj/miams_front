@@ -173,7 +173,7 @@ const Update = () => {
               </div>
               <div className="w-1/12 mx-auto my-3">
                 {selectedImage && (
-                  <img width={100} height={100} src={selectedImage} alt='image' />
+                  <img width={100} height={100} src={selectedImage} alt='particule' />
                 )}
               </div>
               {/* <label htmlFor="">Categorie </label>
