@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const Email = ( {setEmail} ) => {
 
     // const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;

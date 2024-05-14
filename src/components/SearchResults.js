@@ -60,7 +60,7 @@ const SearchResults = () => {
     }
 
     setRecettesAffichees(recettesAffichees); // Mettre à jour les recettes affichées
-  }, [getRecette, homeLocation]);
+  }, [getRecette,filtreCategorie,filtrerParCategorie, homeLocation]);
 
   return (
     <section>

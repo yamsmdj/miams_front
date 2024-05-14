@@ -34,7 +34,7 @@ const Update = () => {
       .catch((error) => {
         console.error("Erreur lors de la recupéaration des categories", error);
       });
-  }, []);
+  }, [recetteId]);
   // console.log('id' , recetteId);
   const converToBase64 = (e) => {
     var reader = new FileReader();
@@ -173,7 +173,7 @@ const Update = () => {
               </div>
               <div className="w-1/12 mx-auto my-3">
                 {selectedImage && (
-                  <img width={100} height={100} src={selectedImage} />
+                  <img width={100} height={100} src={selectedImage} alt='image' />
                 )}
               </div>
               {/* <label htmlFor="">Categorie </label>
