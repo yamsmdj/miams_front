@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { redirect, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const Update = () => {
   const [recettes, setRecettes] = useState([]);
@@ -8,13 +8,13 @@ const Update = () => {
   const [title, setTitle] = useState("");
   const [time, setTime] = useState(0);
   const [categorie, setCategorie] = useState("");
-  const [catId, setCatId] = useState(0);
+
   const [description, setDescription] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
-  const [etapes, setEtapes] = useState([]);
+  const [etapes] = useState([]);
 
   const { recetteId } = useParams();
-  const { categorieId } = useParams();
+
 
   useEffect(() => {
     axios

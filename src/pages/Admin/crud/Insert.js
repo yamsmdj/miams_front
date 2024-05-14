@@ -79,7 +79,7 @@ const Insert = () => {
 
           const imagePath = response.data;
           setPicture(imagePath);
-          console.log(imagePath);
+          console.log(picture);
 
           axios
             .post(`http://localhost:8000/api/recette/`, {

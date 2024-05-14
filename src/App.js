@@ -9,13 +9,12 @@ import Recette from "./pages/Recette/Recette";
 import Dashboard from "./pages/Admin/";
 import Update from "./pages/Admin/crud/Update";
 import Insert from "./pages/Admin/crud/Insert";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ChefInsert from "./pages/Admin/crud/ChefInsert";
 import Error404 from "./pages/Error404";
 import SearchResults from "./components/SearchResults";
 import RecetteByIngredient from "./pages/Recette/RecetteByIngredient";
-import axios from "axios";
-import { jwtDecode } from "jwt-decode";
+
 
 function App() {
   useEffect(() => {

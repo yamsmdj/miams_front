@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from "react";
+const Password = ({ setPassword }) => {
 
-const Password = ({setPassword}) => {
-  const pwdRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@&#$%]).{8,23}$/;
+  // const pwdRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@&#$%]).{8,23}$/;
 
-
-
-
-  const [pwdFocus, setPwdFocus] = useState(false);
+  // const [pwdFocus, setPwdFocus] = useState(false);
 
   // useEffect(() => {
   //     setPwdValid(pwdRegex.test(pwd))

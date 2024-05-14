@@ -10,10 +10,9 @@ import { jwtDecode } from "jwt-decode";
 const PanelAdmin = () => {
   const [recettes, setRecettes] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [flashMessage, setFlashMessage] = useState("")
-  const [confirmDelete, setConfirmDelete] = useState(false);
+
   const [choiceDelete, setChoiceDelete] = useState(null)
-  const recettes_id = recettes.map((rec) => (rec.id))
+  // const recettes_id = recettes.map((rec) => (rec.id))
 
 
   useEffect(() => {
