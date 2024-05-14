@@ -40,7 +40,7 @@ const SearchResults = () => {
       (recette) => recette.categorie?.name === categorie
     );
     return recettesFiltrees;
-  },[]);
+  },[getRecette]);
 
   const handleFiltreCategorie = (categorie) => {
     setFiltreCategorie(categorie);
