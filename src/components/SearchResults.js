@@ -7,7 +7,7 @@ const SearchResults = () => {
   const [loading, setLoading] = useState(false);
   const [filtreCategorie, setFiltreCategorie] = useState(null); // État pour stocker la catégorie de filtre
   const [ingredients, setIngredients] = useState("");
-  const homeLocation = window.location.pathname == "/";
+  const homeLocation = window.location.pathname === "/";
   const [recettesAffichees, setRecettesAffichees] = useState([]);
 
   useEffect(() => {
