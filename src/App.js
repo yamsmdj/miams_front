@@ -1,5 +1,6 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
+import { isConnect, isAdmin } from "./components/Auth";
 import Wrapper from "./components/Wrapper";
 import Accueil from "./pages/Home/Accueil";
 import Log from "./pages/Login/Login";
@@ -14,6 +15,7 @@ import ChefInsert from "./pages/Admin/crud/ChefInsert";
 import Error404 from "./pages/Error404";
 import SearchResults from "./components/SearchResults";
 import RecetteByIngredient from "./pages/Recette/RecetteByIngredient";
+import Moncompte from "./pages/Login/Moncompte";
 
 
 function App() {
@@ -35,10 +37,12 @@ function App() {
           <Route path="/:categorieName/:categorieId" element={<Categorie />} />
           <Route path="/recette/title/:recetteTitle" element={<Recette />} />
           <Route path="/recette/ingredient/:ingredientName" element={<RecetteByIngredient />} />
-          <Route path="/admin/dashboard" element={<Dashboard />} />
-          <Route path="/admin/update/:recetteId" element={<Update />} />
-          <Route path="/admin/chefinsert" element={<ChefInsert />} />
-          <Route path="/admin/insert" element={<Insert />} />
+          <Route path="/moncompte/" element={isConnect() ? <Moncompte /> : <Navigate to="/" />} />
+
+          <Route path="/admin/dashboard" element={isAdmin() ? <Dashboard /> : <Navigate to="*" />} />
+          <Route path="/admin/update/:recetteId" element={isAdmin() ? <Update /> : <Navigate to="*" />} />
+          <Route path="/admin/chefinsert" element={isAdmin() ? <ChefInsert /> : <Navigate to="*" />} />
+          <Route path="/admin/insert" element={isAdmin() ? <Insert /> : <Navigate to="*" />} />
           <Route path="/search" element={<SearchResults />} />
         </Routes>
       </Wrapper>
