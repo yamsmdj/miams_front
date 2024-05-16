@@ -7,7 +7,7 @@ const CardIngredient = () => {
 
     useEffect(() => {
       axios
-        .get("https://85.215.207.108:8000/api/ingredient")
+        .get("http://85.215.207.108:8000/api/ingredient")
         .then((res) => {
           setIngredients(res.data);
 
