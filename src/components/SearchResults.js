@@ -13,7 +13,7 @@ const SearchResults = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://85.215.207.108:8000/api/recette")
+      .get("https://85.215.207.108:8000/api/recette")
       .then((res) => {
         setGetRecette(res.data);
         setLoading(false);
@@ -27,7 +27,7 @@ const SearchResults = () => {
   useEffect(() => {
     if (ingredients.length > 0) {
       axios
-        .get(`http://85.215.207.108:8000/api/recette/ingredient/${ingredients}`)
+        .get(`https://85.215.207.108:8000/api/recette/ingredient/${ingredients}`)
         .then((res) => {
           setGetRecette(res.data);
         })
