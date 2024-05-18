@@ -22,30 +22,31 @@ const Recette = () => {
     
   }, [recetteTitle]);
 
-  useEffect(() => {
-    axios
-      .get(`localhost:8000/api/assets/recettes/`)
-      .then((res) => {
-        setRecettes(res.data);
-        // console.log('blablabla',res.data);
-      })
-      .catch((error) => {
-        console.error(
-          "Une erreur s'est produite lors de la récupération des produits : ",
-          error
-        );
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:8000/api/assets/recettes/${recettes.picture}`)
+  //     .then((res) => {
+  //       setRecettes(res.data);
+  //       console.log('blablabla',res.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error(
+  //         "Une erreur s'est produite lors de la récupération des images : ",
+  //         error
+  //       );
+  //     });
+  // }, []);
 
 
 
   
-  // console.log('recette', recettes[0]?.title);
+  console.log('recette', recettes[0]?.title);
   return (
     <section>
       <div className="flex flex-col items-center w-8/12 mx-auto ">
         <h1 className="font-bold text-xl py-4 my-3">{recettes[0]?.title}</h1>
         <div className="flex flex-col lg:flex-row justify-around items-center w-1/2">
+          {/* chemin pour trouver l'iamge */}
             <img
               src={`http://localhost:8000/api/assets/recettes/${recettes[0]?.picture}`}
               alt={recettes[0]?.title}

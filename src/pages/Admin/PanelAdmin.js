@@ -15,11 +15,7 @@ const PanelAdmin = () => {
   const [choiceDelete, setChoiceDelete] = useState(null)
   // const recettes_id = recettes.map((rec) => (rec.id))
 
-
   useEffect(() => {
-
-    
-
     axios
       .get("http://localhost:8000/api/recette")
       .then((res) => {
@@ -66,8 +62,8 @@ const PanelAdmin = () => {
     const decodedToken = jwtDecode(token);
     roles = decodedToken.roles;
   }
-console.log(roles);
-console.log(confirmDelete);
+// console.log(roles);
+// console.log(confirmDelete);
 return (
   roles.includes("ROLE_ADMIN") ? (
     <section className="flex w-full">

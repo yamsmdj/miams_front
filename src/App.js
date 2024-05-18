@@ -11,7 +11,6 @@ import Dashboard from "./pages/Admin/";
 import Update from "./pages/Admin/crud/Update";
 import Insert from "./pages/Admin/crud/Insert";
 import { useEffect } from "react";
-import ChefInsert from "./pages/Admin/crud/ChefInsert";
 import Error404 from "./pages/Error404";
 import SearchResults from "./components/SearchResults";
 import RecetteByIngredient from "./pages/Recette/RecetteByIngredient";
@@ -41,7 +40,6 @@ function App() {
 
           <Route path="/admin/dashboard" element={isAdmin() ? <Dashboard /> : <Navigate to="*" />} />
           <Route path="/admin/update/:recetteId" element={isAdmin() ? <Update /> : <Navigate to="*" />} />
-          <Route path="/admin/chefinsert" element={isAdmin() ? <ChefInsert /> : <Navigate to="*" />} />
           <Route path="/admin/insert" element={isAdmin() ? <Insert /> : <Navigate to="*" />} />
           <Route path="/search" element={<SearchResults />} />
         </Routes>

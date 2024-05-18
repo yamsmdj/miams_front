@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 const index = ({children}) => {
     return (
-        <div className='flex flex-col justify-between'>
+        <div className='flex flex-col min-vh-100'>
             <Navbar />
             {children}
             <Footer />

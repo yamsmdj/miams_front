@@ -56,13 +56,11 @@ const Connexion = () => {
     }
   };
 
-
-
   return (
-    <section>
+    <section className=" flex-grow">
       <form onSubmit={handleLoginSubmit} className=" text-orange-500">
-       <Email setEmail={setEmail}/>
-       <Password setPassword={setPassword}/>
+        <Email setEmail={setEmail} />
+        <Password setPassword={setPassword} />
         <div className="flex flex-col">
           <NavLink to="/register">Mot de passe oublié ?</NavLink>
           <button type="submit" className="text-white bg-orange-400 my-3">
