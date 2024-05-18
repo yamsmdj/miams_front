@@ -31,7 +31,7 @@ const PanelAdmin = () => {
         setLoading(false);
       });
   }, []);
-
+console.log(confirmDelete);
   const handleDeleteClick = (recette) => {
     setChoiceDelete(recette)
     setConfirmDelete(true);
