@@ -8,7 +8,7 @@ const CardCategorie = () => {
 
   useEffect(() => {
     axios
-      .get("http://miams-food.netlify.app/api/categorie")
+      .get("http://localhost:8000/api/categorie")
       .then((res) => {
         setCategories(res.data);
         setLoading(false);

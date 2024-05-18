@@ -7,7 +7,7 @@ const CardIngredient = () => {
 
     useEffect(() => {
       axios
-        .get("http://miams-food.netlify.app/api/ingredient")
+        .get("http://localhost:8000/api/ingredient")
         .then((res) => {
           setIngredients(res.data);
 

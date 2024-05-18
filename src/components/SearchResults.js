@@ -13,7 +13,7 @@ const SearchResults = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://miams-food.netlify.app/api/recette")
+      .get("http://localhost:8000/api/recette")
       .then((res) => {
         setGetRecette(res.data);
         setLoading(false);
@@ -27,7 +27,7 @@ const SearchResults = () => {
   useEffect(() => {
     if (ingredients.length > 0) {
       axios
-        .get(`http://miams-food.netlify.app/api/recette/ingredient/${ingredients}`)
+        .get(`http://localhost:8000/api/recette/ingredient/${ingredients}`)
         .then((res) => {
           setGetRecette(res.data);
         })
@@ -124,7 +124,7 @@ const SearchResults = () => {
                   >
                     {recette.title ? (
                       <img
-                        src={`http://miams-food.netlify.app/api/assets/recettes/${recette.picture}`}
+                        src={`http://localhost:8000/api/assets/recettes/${recette.picture}`}
                         alt={recette.title}
                         className="h-52 object-cover mx-auto rounded-xl"
                       />
