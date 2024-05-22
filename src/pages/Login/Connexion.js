@@ -12,19 +12,11 @@ const Connexion = () => {
 
   const storeToken = (token) => {
     localStorage.setItem("token", token);
+
   };
-  // const decodeToken = (token) => {
-  //   try {
-  //     const decodedToken = jwt_decode(token);
-  //     return decodedToken;
-  //   }catch (error) {
-  //     setError( "Erreur de decodage du token:", error);
-  //     return null;
-  //   }
-  // }
-  console.log(error);
+
+
   const login = async (email, password) => {
-    // e.preventDefault();
     try {
       const response = await axios.post(
         "http://localhost:8000/api/user/login",
@@ -42,7 +34,7 @@ const Connexion = () => {
       }
     } catch (error) {
       setError(
-        "Échec de l'authentification. Veuillez vérifier vos identifiants."
+        "Échec de l'authentification. Veuillez vérifier vos identifiants.",error
       );
     }
   };

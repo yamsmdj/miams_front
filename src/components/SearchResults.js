@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import CardRecettes from "./cards/CardRecettes";
 
 const SearchResults = () => {
   const [getRecette, setGetRecette] = useState([]);
@@ -13,7 +14,7 @@ const SearchResults = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:8000/api/recette")
+      .get("http://85.215.207.108:8000/api/recette")
       .then((res) => {
         setGetRecette(res.data);
         setLoading(false);
@@ -27,7 +28,7 @@ const SearchResults = () => {
   useEffect(() => {
     if (ingredients.length > 0) {
       axios
-        .get(`http://localhost:8000/api/recette/ingredient/${ingredients}`)
+        .get(`http://85.215.207.108:8000/api/recette/ingredient/${ingredients}`)
         .then((res) => {
           setGetRecette(res.data);
         })
@@ -35,20 +36,18 @@ const SearchResults = () => {
     }
   }, [ingredients]);
 
-  const filtrerParCategorie = useCallback((categorie) => {
-    const recettesFiltrees = getRecette.filter(
-      (recette) => recette.categorie?.name === categorie
-    );
-    return recettesFiltrees;
-  },[getRecette]);
-
   const handleFiltreCategorie = (categorie) => {
     setFiltreCategorie(categorie);
   };
+
+  const filtrerParCategorie = useCallback((categorie) => {
+    const recettesFiltrees = getRecette.filter((recette) => recette.categorie?.name === categorie );
+    return recettesFiltrees;
+  },[getRecette]);
+
+  
   const getRecipesByIngredient = (value) => {
     setIngredients(value);
-    // console.log("ingredient", ingredients);
-    // console.log("recette", getRecette);
   };
   useEffect(() => {
     let recettesAffichees = getRecette;
@@ -93,7 +92,7 @@ const SearchResults = () => {
             </button>
           </div>
         )}
-        <div className="">
+        <div>
           <input
             type="search"
             className="p-3 w-3/12 border border-black rounded-xl"
@@ -110,30 +109,8 @@ const SearchResults = () => {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-6 text-center w-1/2 mx-auto">
           {recettesAffichees.length > 0 ? (
-            recettesAffichees.map((recette, index) => (
-              <div
-                key={index}
-                className="flex flex-col justify-around w-full px-6 pb-6 rounded-xl hover:bg-orange-500 hover:text-white "
-              >
-                <p>
-                  <strong>{recette.title}</strong>
-                </p>
-                <div className="">
-                  <NavLink
-                    to={`/recette/title/${recette.title.replace(/\s+/g, "_")}`}
-                  >
-                    {recette.title ? (
-                      <img
-                        src={`http://localhost:8000/api/assets/recettes/${recette.picture}`}
-                        alt={recette.title}
-                        className="h-52 object-cover mx-auto rounded-xl"
-                      />
-                    ) : (
-                      <p>Pas d'image disponible</p>
-                    )}
-                  </NavLink>
-                </div>
-              </div>
+            recettesAffichees.slice(0,1).map((recette) => (
+              <CardRecettes key={recette.id}  recettes={recettesAffichees} />
             ))
           ) : (
             <p>Aucune recette trouvée.</p>
@@ -142,7 +119,7 @@ const SearchResults = () => {
       )}
       <NavLink to="/search">
         <h4 className="p-4 my-8 text-center font-bold hover:underline hover:text-white bg-blue-600 rounded-xl w-2/12 mx-auto">
-          Voir toutes les recettes{" "}
+          Voir toutes les recettes
         </h4>
       </NavLink>
     </section>

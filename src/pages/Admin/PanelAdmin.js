@@ -10,10 +10,8 @@ import { jwtDecode } from "jwt-decode";
 const PanelAdmin = () => {
   const [recettes, setRecettes] = useState([]);
   const [loading, setLoading] = useState(true);
-
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [choiceDelete, setChoiceDelete] = useState(null)
-  // const recettes_id = recettes.map((rec) => (rec.id))
 
   useEffect(() => {
     axios
@@ -62,8 +60,7 @@ console.log(confirmDelete);
     const decodedToken = jwtDecode(token);
     roles = decodedToken.roles;
   }
-// console.log(roles);
-// console.log(confirmDelete);
+
 return (
   roles.includes("ROLE_ADMIN") ? (
     <section className="flex w-full">

@@ -36,12 +36,12 @@ function App() {
           <Route path="/:categorieName/:categorieId" element={<Categorie />} />
           <Route path="/recette/title/:recetteTitle" element={<Recette />} />
           <Route path="/recette/ingredient/:ingredientName" element={<RecetteByIngredient />} />
+          <Route path="/search" element={<SearchResults />} />
           <Route path="/moncompte/" element={isConnect() ? <Moncompte /> : <Navigate to="/" />} />
 
           <Route path="/admin/dashboard" element={isAdmin() ? <Dashboard /> : <Navigate to="*" />} />
           <Route path="/admin/update/:recetteId" element={isAdmin() ? <Update /> : <Navigate to="*" />} />
           <Route path="/admin/insert" element={isAdmin() ? <Insert /> : <Navigate to="*" />} />
-          <Route path="/search" element={<SearchResults />} />
         </Routes>
       </Wrapper>
     </BrowserRouter>
