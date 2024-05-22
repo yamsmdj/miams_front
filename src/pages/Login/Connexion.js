@@ -12,7 +12,6 @@ const Connexion = () => {
 
   const storeToken = (token) => {
     localStorage.setItem("token", token);
-
   };
 
 
@@ -30,7 +29,7 @@ const Connexion = () => {
 
         window.location.href = "/";
       } else {
-        setError("Identifiants de connexion invalides.");
+        setError("Identifiants de connexion invalides.",error);
       }
     } catch (error) {
       setError(
