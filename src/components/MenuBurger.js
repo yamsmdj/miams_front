@@ -18,7 +18,7 @@ const MenuBurger = () => {
         { label: "DESSERT", link: "/dessert/3" },
         { label: "BOISSONS", link: "/boissons/4" }
       ],
-      isFirstCategory: true
+      isFirstCategory: true,
     },
     {
       title: "INGREDIENTS",
@@ -62,7 +62,7 @@ const MenuBurger = () => {
       </button>
       {isOpen && (
         <div>
-          <div className=" absolute flex flex-col lg:flex-row justify-around top-24 lg:top-36 p-12 bg-gray-300  md:w-1/2 ">
+          <div className=" absolute flex flex-col lg:flex-row justify-around top-24 lg:top-36 p-12 bg-orange-400  md:w-1/2 z-10 ">
             {categories.map((category, index) => (
               <RecetteCategorie
                 key={index}

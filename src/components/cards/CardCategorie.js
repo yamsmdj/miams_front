@@ -8,7 +8,7 @@ const CardCategorie = () => {
 
   useEffect(() => {
     axios
-      .get("http://85.215.207.108:8000/api/categorie")
+      .get("http://localhost:8000/api/categorie")
       .then((res) => {
         setCategories(res.data);
         setLoading(false);
@@ -29,7 +29,7 @@ const CardCategorie = () => {
       {loading ? (
         <p>chargement ... </p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-center my-7">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-center my-7 ">
           {categories ? (
             categories.map((categorie, index) => (
               <div
@@ -49,7 +49,7 @@ const CardCategorie = () => {
                           "_"
                         )}.jpg`}
                         alt={categorie.name}
-                        className="h-52 object-cover mx-auto rounded-xl"
+                        className="h-52 object-cover mx-auto rounded-xl "
                       />
                     ) : (
                       <p>Pas d'image disponible</p>

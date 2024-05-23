@@ -13,7 +13,7 @@ const Accueil = () => {
           <CardCategorie />
         </div>
 
-        <h2 className="text-center">Découvrez nos ingrédients de saison</h2>
+
         <div className="w-10/12 m-auto">
         <CardIngredient />
         </div>

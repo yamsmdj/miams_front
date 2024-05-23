@@ -14,7 +14,7 @@ const SearchResults = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://85.215.207.108:8000/api/recette")
+      .get("http://localhost:8000/api/recette")
       .then((res) => {
         setGetRecette(res.data);
         setLoading(false);
@@ -28,7 +28,7 @@ const SearchResults = () => {
   useEffect(() => {
     if (ingredients.length > 0) {
       axios
-        .get(`http://85.215.207.108:8000/api/recette/ingredient/${ingredients}`)
+        .get(`http://localhost:8000/api/recette/ingredient/${ingredients}`)
         .then((res) => {
           setGetRecette(res.data);
         })
@@ -107,7 +107,7 @@ const SearchResults = () => {
       {loading ? (
         <p>Chargement ... </p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-6 text-center w-1/2 mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-6 text-center  mx-auto">
           {recettesAffichees.length > 0 ? (
             recettesAffichees.slice(0,1).map((recette) => (
               <CardRecettes key={recette.id}  recettes={recettesAffichees} />
@@ -118,7 +118,7 @@ const SearchResults = () => {
         </div>
       )}
       <NavLink to="/search">
-        <h4 className="p-4 my-8 text-center font-bold hover:underline hover:text-white bg-blue-600 rounded-xl w-2/12 mx-auto">
+        <h4 className="p-4 my-8 text-center font-bold hover:underline hover:text-white bg-orange-500 rounded-xl md:w-2/12 mx-auto">
           Voir toutes les recettes
         </h4>
       </NavLink>

@@ -22,25 +22,6 @@ const Recette = () => {
     
   }, [recetteTitle]);
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`http://localhost:8000/api/assets/recettes/${recettes.picture}`)
-  //     .then((res) => {
-  //       setRecettes(res.data);
-  //       console.log('blablabla',res.data);
-  //     })
-  //     .catch((error) => {
-  //       console.error(
-  //         "Une erreur s'est produite lors de la récupération des images : ",
-  //         error
-  //       );
-  //     });
-  // }, []);
-
-
-
-  
-  console.log('recette', recettes[0]?.title);
   return (
     <section>
       <div className="flex flex-col items-center w-8/12 mx-auto ">
@@ -52,11 +33,10 @@ const Recette = () => {
               alt={recettes[0]?.title}
               className=" min-w-64"
             />
-            {console.log('tsettttt',recettes)}
           <div>
             <h2>Temps de préparation:</h2>
-            <p className="my-6 underline font-semibold">{recettes[0]?.time} minutes</p>
-            <h3>Niveau de difficulté</h3>
+            <p className=" underline font-semibold">{recettes[0]?.time} minutes</p>
+            {/* <h3>Niveau de difficulté</h3> */}
           </div>
         </div>
         <div>
@@ -79,7 +59,6 @@ const Recette = () => {
         { recettes[0]?.etapes?.map((step) => (
           <div key={step.n_etape} className="grid grid-cols-2 py-3 text-left w-11/12 border-y-2">
           <h3 className="font-bold text-lg pl-5">ETAPE {step.n_etape} : </h3>
-          {console.log(step)}
           <p>{step.description}</p>
           </div>
         ))}

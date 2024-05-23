@@ -7,7 +7,7 @@ const CardIngredient = () => {
 
     useEffect(() => {
       axios
-        .get("http://85.215.207.108:8000/api/ingredient")
+        .get("http://localhost:8000/api/ingredient")
         .then((res) => {
           setIngredients(res.data);
 
@@ -21,10 +21,11 @@ const CardIngredient = () => {
     }, []);
     return (
       <section>
-        <div className="grid grid-cols-3 md:grid-cols-5  lg:grid-cols-8 w-10/12 m-auto">
+        <h1 className="mt-8 text-3xl font-bold text-center uppercase">Découvrez nos ingrédients de saison</h1>
+        <div className="grid grid-cols-3 md:grid-cols-5  lg:grid-cols-8 w-10/12 m-auto my-7 ">
           {ingredients ? (
             ingredients.slice(0,8).map((ingredient, index) => (
-              <div key={index} className="flex flex-col items-center transform hover:scale-150 duration-500">
+              <div key={index} className="flex flex-col items-center transform hover:scale-150 duration-500 py-3 hover:bg-orange-500">
                 <NavLink to={`/recette/ingredient/${ingredient.name}`}>
                   {ingredient.name ? (
                     <img

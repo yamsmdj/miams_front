@@ -12,7 +12,6 @@ export const isAdmin = () => {
     if (token) {
         const decodedToken = jwtDecode(token);
         const roles = decodedToken.roles;
-        console.log(roles);
         return roles.includes('ROLE_ADMIN');
     }
     return false; // Si aucun token n'est présent, l'utilisateur n'est pas administrateur

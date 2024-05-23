@@ -10,7 +10,7 @@ const RecetteCategorie = ({title, items, isFirstCategory}) => {
           <NavLink key={index} to={item.link}>
             <div className="flex items-center">
             <img src={`../../assets/categories/entree.webp`} alt="categories" className='h-8' />
-            <li className=" hover:bg-orange-300 hover:py-3 hover:px-4 my-2 hover:rounded-full">{item.label}</li>
+            <li className=" hover:bg-gray-300 hover:py-3 hover:px-4 py-3 my-2 hover:rounded-full">{item.label}</li>
             </div>
           </NavLink>
             ))}
