@@ -1,7 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
 import Logo from "../../assets/Icons/Logo.svg";
 import Connexion from "../../assets/Icons/user.svg";
-import Shop from "../../assets/Icons/shop.svg";
 import Logout from "../../assets/Icons/logout.svg";
 import setting from "../../assets/Icons/setting.svg";
 import MenuBurger from "../MenuBurger";
