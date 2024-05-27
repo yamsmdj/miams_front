@@ -8,6 +8,7 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
   const currentUrl = window.location.pathname;
 
   const storeToken = (token) => {
@@ -31,6 +32,7 @@ const Login = () => {
       }
     }catch (error) {
       console.log("Échec de l'authentification. Veuillez vérifier vos identifiants." , error );
+      setError('Email ou mot de passe incorrect')
     }
   }
   const handleLoginSubmit = async (e) => {
@@ -44,11 +46,13 @@ const Login = () => {
 
   return (
     <section>
-      <div className="flex flex-col items-center justify text-center w-4/12 m-auto my-3 h-full bg-gray-300">
+      <div className="flex flex-col items-center justify text-center w-8/12 md:w-4/12 m-auto my-3 h-full bg-gray-300">
         <div>
-          <img src={UserLogo} alt="" />
+          <img src={UserLogo} alt="logo login" />
         </div>
-        <div>{currentUrl === "/connexion" ?(
+        <div>
+
+          {currentUrl === "/connexion" ?(
          <Connexion 
          email={email}
          setEmail={setEmail}

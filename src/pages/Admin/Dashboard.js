@@ -25,7 +25,7 @@ const Dashboard = () => {
                 </div>
                 <h2 className='font-bold my-2 text-center'>Dashboard</h2>
 
-                <div onClick={toggleCategoryDropdown} className="flex items-center flex-col  cursor-pointer relative">
+                {/* <div onClick={toggleCategoryDropdown} className="flex items-center flex-col  cursor-pointer relative">
 
                     <div className='flex flex-row'>
                         <NavLink className="flex items-center flex-row  text-2xl">
@@ -57,27 +57,7 @@ const Dashboard = () => {
                             </li>
                         </ul>
                     )}
-                </div>
-                <div onClick={toggleChefDropdown} className="flex items-center flex-col  cursor-pointer relative">
-                    <div className='flex flex-row'>
-                        <NavLink className="flex items-center flex-row  text-2xl">
-                            <h2>Chef</h2>
-                            <span className={`ml-1 transform ${showChefDropdown ? '0' : 'rotate-90'} transition duration-300 ease-in-out`}>&#9660;</span>
-                        </NavLink>
-                    </div>
-                    {showChefDropdown && (
-                        <ul className="text-sm">
-                            <li className='hover:underline'>
-                                <NavLink className="flex items-center flex-col">
-                                    <p>Liste de tous les chefs</p>
-                                </NavLink>
-                            </li>
-                        </ul>
-                    )}
-                </div>
-
-
-
+                </div> */}
 
             </div>
             </div>

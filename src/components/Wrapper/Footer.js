@@ -13,7 +13,7 @@ const Footer = () => {
             </div>
             <div className="flex justify-evenly py-3">
                 <NavLink><p>Condition d'utilisation</p></NavLink>
-                <NavLink><p>Condition General</p></NavLink>
+                <NavLink><p>Condition generales</p></NavLink>
                 <NavLink><p>Politique confidentialité</p></NavLink>
                 <NavLink><p>Politique de cookies</p></NavLink>
             </div>

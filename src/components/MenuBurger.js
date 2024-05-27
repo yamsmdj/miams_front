@@ -13,27 +13,28 @@ const MenuBurger = () => {
     {
       title: "CATEGORIE DE RECETTES",
       items: [
-        { label: "ENTRÉE", link: "/Entrée/1" },
-        { label: "PLATS", link: "/Plats/2" },
-        { label: "DESSERT", link: "/dessert/3" },
-        { label: "BOISSONS", link: "/boissons/4" }
+        { label: "ENTRÉE", picture: '../../assets/categories/entree.webp', link: "/Entrée/1" },
+        { label: "PLATS", picture: '../../assets/categories/plats.jpg', link: "/Plats/2" },
+        { label: "DESSERT", picture: '../../assets/categories/dessert.jpg', link: "/dessert/3" },
+        { label: "TOUTES LES RECETTES", picture: '../../assets/categories/allrecettes.jpg', link: "/search"}
+  
       ],
       isFirstCategory: true,
     },
     {
       title: "INGREDIENTS",
       items: [
-        { label: "VIANDES", link: "/viandes" },
-        { label: "POISSONS", link: "/poissons" },
-        { label: "FRUITS", link: "/fruits" },
-        { label: "LEGUMES", link: "/legumes" }
+        { label: "VIANDES", picture: '../../assets/categories/viandes.png', link: "/viandes" },
+        { label: "POISSONS", picture: '../../assets/categories/poissons.png', link: "/poissons" },
+        { label: "FRUITS", picture: '../../assets/categories/fruits.png', link: "/fruits" },
+        { label: "LEGUMES", picture: '../../assets/categories/legumes.jpg', link: "/legumes" }
       ]
     },
     {
       title: "SHOP",
       items: [
-        { label: "USTENSILES DE CUISINE", link: "/ustensiles" },
-        { label: "TENUES DE CUISINE", link: "/tenues" }
+        { label: "USTENSILES DE CUISINE",  picture: '../../assets/categories/ustensiles.png', link: "/ustensiles" },
+        { label: "TENUES DE CUISINE",  picture: '../../assets/categories/tenues.png', link: "/tenues" }
       ]
     }
   ];

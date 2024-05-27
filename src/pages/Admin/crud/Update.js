@@ -100,12 +100,7 @@ const Update = () => {
       .catch((error) => {
         console.error("Error uploading image:", error);
       });
-      console.log(("titre", title));
-      console.log(("time", time));
-      console.log(("image", selectedImage));
-      console.log(("description", description));
-      console.log(("categorie", categorie));
-      console.log(("etapes", etapes));
+
   };
 
  
@@ -117,10 +112,10 @@ const Update = () => {
   return (
     <section>
       {/* {console.log("return", recettes)} */}
-      <div className="w-1/2 mx-auto text-center bg-orange-500 py-16">
+      <div className="w-1/2 mx-auto text-center py-16">
         <form>
           {recettes && (
-            <div className="">
+            <div>
               <div className="font-bold text-4xl py-9">
                 <h1>{recettes.title}</h1>
                 <img
@@ -138,6 +133,7 @@ const Update = () => {
                   onChange={(e) => setTitle(e.target.value)}
                   name="title"
                   defaultValue={recettes.title}
+                  className="border-2"
                 />
               </div>
               <label className="font-bold " htmlFor="title">
@@ -149,6 +145,7 @@ const Update = () => {
                   onChange={(e) => setTime(parseInt(e.target.value))}
                   name="time"
                   defaultValue={recettes.time}
+                  className="border-2"
                 />
               </div>
               <label htmlFor="">Choisir une nouvelle image</label>
@@ -156,10 +153,13 @@ const Update = () => {
                 <input
                   type="file"
                   name="myImage"
-                  className="bg-white"
+                  className="border-2"
                   onChange={converToBase64}
                 />
               </div>
+                {selectedImage && (
+                  <img width={100} height={100} src={selectedImage} alt='particule' className="mx-auto my-2" />
+                )}
               <label className="font-bold " htmlFor="title">
                 description :
               </label>
@@ -169,13 +169,10 @@ const Update = () => {
                   name="description"
                   onChange={(e) => setDescription(e.target.value)}
                   defaultValue={recettes.description}
+                  className="border-2 "
                 />
               </div>
-              <div className="w-1/12 mx-auto my-3">
-                {selectedImage && (
-                  <img width={100} height={100} src={selectedImage} alt='particule' />
-                )}
-              </div>
+              
               {/* <label htmlFor="">Categorie </label>
               <select
           value={categorie}

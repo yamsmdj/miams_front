@@ -1,8 +1,8 @@
 import axios from "axios";
 import Update from "../../assets/Icons/update.svg";
 import Delete from "../../assets/Icons/delete.svg";
-// import Cancel from "../../assets/Icons/cancel.svg";
-// import Check from "../../assets/Icons/check.svg";
+import Cancel from "../../assets/Icons/cancel.svg";
+import Check from "../../assets/Icons/check.svg";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
@@ -114,8 +114,10 @@ return (
                     {choiceDelete && choiceDelete.id === recette.id ? (
                       <div className="text-center">
                         <p>Confirmer</p>
-                        <button onClick={handleConfirmDelete}>Confirmer</button>
-                        <button onClick={handleCancelDelete}>Annuler</button>
+                        <div className="flex item-center justify-center gap-3">
+                        <button onClick={handleConfirmDelete}><img src={Check} alt="check" className="w-6" /></button>
+                        <button onClick={handleCancelDelete}><img src={Cancel} alt="cancel" className="w-6" /></button>
+                        </div>
                       </div>
                     ) : (
                       <div className="text-center">

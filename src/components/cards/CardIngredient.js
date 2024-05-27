@@ -21,7 +21,7 @@ const CardIngredient = () => {
     }, []);
     return (
       <section>
-        <h1 className="mt-8 text-3xl font-bold text-center uppercase">Découvrez nos ingrédients de saison</h1>
+        <h1 className="mt-8 text-3xl font-bold text-center uppercase">Découvrez nos recettes par leurs ingrédients</h1>
         <div className="grid grid-cols-3 md:grid-cols-5  lg:grid-cols-8 w-10/12 m-auto my-7 ">
           {ingredients ? (
             ingredients.slice(0,8).map((ingredient, index) => (

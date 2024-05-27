@@ -126,29 +126,32 @@ const Insert = () => {
   };
 
   return (
-    <section className="bg-orange-500 w-10/12 mx-auto">
-      <h1 className="text-center text-white font-semibold text-3xl pt-5">
+    <section className="w-10/12 mx-auto">
+      <h1 className="text-center font-semibold text-3xl pt-5">
         Ajouter une recette
       </h1>
       <form
         onSubmit={(e) => handleSubmit(e)}
-        className="flex flex-col items-center py-10 font-semibold"
+        className="flex flex-col items-center py-10 font-semibold "
       >
         <label htmlFor="">Nom de la recette </label>
         <div>
-          <input type="text" onChange={(e) => setTitle(e.target.value)} />
+          <input type="text" className=" border-2 text-orange-600" onChange={(e) => setTitle(e.target.value)} />
         </div>
         <label htmlFor="">Description </label>
         <div>
           <textarea
+          
             type="text"
+            className=" border-2 text-orange-600"
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
         <div className="my-3 flex flex-col">
-          <label htmlFor="">Temp total de la recette </label>
+          <label>Temp total de la recette </label>
           <input
             type="number"
+            className=" border-2 text-orange-600"
             onChange={(e) => setTime(parseInt(e.target.value))}
           />
         </div>
@@ -156,6 +159,7 @@ const Insert = () => {
         <select
           value={categorieId}
           onChange={(e) => setCategorieId(parseInt(e.target.value))}
+          className=" border-2 text-orange-600"
         >
           <option value="">Sélectionnez une catégorie</option>
           {categories.map((cat) => (
@@ -164,15 +168,14 @@ const Insert = () => {
             </option>
           ))}
         </select>
+        <div className="flex flex-col my-3 text-center">
         <label htmlFor="">Choisir une image</label>
-        <div className="flex flex-col-reverse my-3 text-center">
           <input
             type="file"
             name="myImage"
-            className="bg-white"
+            className=" border-2 text-orange-600"
             onChange={converToBase64}
           />
-          <p>(Attention : Nom recette = Nom image // type d'image = jpg // )</p>
         </div>
           {selectedImage === null ? "" : <img width={100} height={100} src={selectedImage} alt='particule' />}
         <div className="flex flex-wrap w-1/2 justify-around mx-auto">
@@ -182,6 +185,7 @@ const Insert = () => {
                 <label>Étape {index + 1}</label>
                 <textarea
                   type="text"
+                  className=" border-2 text-orange-600"
                   value={etape.description}
                   onChange={(e) => handleEtapeChange(index, e.target.value)}
                 />

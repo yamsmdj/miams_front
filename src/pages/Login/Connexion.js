@@ -33,7 +33,7 @@ const Connexion = () => {
       }
     } catch (error) {
       setError(
-        "Échec de l'authentification. Veuillez vérifier vos identifiants.",error
+        "Échec de l'authentification. Email ou mot de passe incorrect",error
       );
     }
   };
@@ -54,6 +54,7 @@ const Connexion = () => {
         <Password setPassword={setPassword} />
         <div className="flex flex-col">
           <NavLink to="/register">Mot de passe oublié ?</NavLink>
+          {error && <span className="text-red-500">{error}</span>}
           <button type="submit" className="text-white bg-orange-400 my-3">
             Connexion
           </button>

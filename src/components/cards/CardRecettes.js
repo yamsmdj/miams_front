@@ -5,7 +5,7 @@ const CardRecettes = ({recettes}) => {
   return (
     <>
       {recettes.map((recette, index) => (
-        <div  key={index} className="flex flex-col justify-around w-full px-6 pb-6 rounded-xl hover:bg-orange-500 hover:text-white ">
+        <div  key={index} className="flex flex-col justify-around w-full px-6 pb-6 rounded-xl hover:bg-orange-500 hover:w-1/2 mx-auto hover:text-white ">
           <p>
             <strong>{recette.title}</strong>
           </p>
