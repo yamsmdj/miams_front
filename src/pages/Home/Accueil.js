@@ -8,7 +8,7 @@ import SearchResults from "../../components/SearchResults";
 
 const Accueil = () => {
   return (
-    <section className=" h-full w-10/12 m-auto">
+    <section className=" grow w-10/12 m-auto">
         <div className="w-10/12 m-auto ">
           <CardCategorie />
         </div>

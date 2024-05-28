@@ -45,8 +45,8 @@ const Login = () => {
   };
 
   return (
-    <section>
-      <div className="flex flex-col items-center justify text-center w-8/12 md:w-4/12 m-auto my-3 h-full bg-gray-300">
+    <section className="grow">
+      <div className="flex flex-col items-center justify text-center w-8/12 md:w-4/12 m-auto my-3 py-5 bg-gray-300">
         <div>
           <img src={UserLogo} alt="logo login" />
         </div>

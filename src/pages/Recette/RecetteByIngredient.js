@@ -19,7 +19,7 @@ const RecetteByIngredient = () => {
   }, [ingredientName]);
 
   return (
-    <section>
+    <section className="grow">
       <div className="flex flex-col lg:flex-row justify-around items-center w-1/2 mx-auto">
         {recette.length > 0 ? (
           recette.map((recipe) => (

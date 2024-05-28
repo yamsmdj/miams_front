@@ -63,7 +63,7 @@ const MenuBurger = () => {
       </button>
       {isOpen && (
         <div>
-          <div className=" absolute flex flex-col lg:flex-row justify-around top-24 lg:top-36 p-12 bg-orange-400  md:w-1/2 z-10 ">
+          <div className=" absolute flex flex-col lg:flex-row justify-around top-24 lg:top-36 p-12 bg-green-400 rounded-xl  md:w-1/2 z-10 ">
             {categories.map((category, index) => (
               <RecetteCategorie
                 key={index}

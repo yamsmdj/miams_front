@@ -62,7 +62,7 @@ const SearchResults = () => {
   }, [getRecette,filtreCategorie,filtrerParCategorie, homeLocation]);
 
   return (
-    <section>
+    <section className="grow">
       <div className="text-center m-4">
         <h2
           className="text-center hover:underline"

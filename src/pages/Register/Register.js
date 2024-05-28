@@ -16,6 +16,7 @@ const Register = () => {
   const regexEmail = /^[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+$/;
   const regexPwd =
     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{6,}$/;
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -26,10 +27,10 @@ const Register = () => {
       })
       .then((res) => {
         console.log("Produit créé avec succès !");
-        Navigate("/admin/dashboard");
+        window.location.href = "/connexion";
       })
       .catch((err) => {
-        console.error("Erreur lors de l'enregistrement d'un utilisateur");
+        console.error("Erreur lors de l'enregistrement d'un utilisateur", err);
       });
   };
   const showPwd = () => {
@@ -38,14 +39,14 @@ const Register = () => {
 
   useEffect(() => {
     if (email === "") {
-      setValidEmail(null); 
+      setValidEmail(null);
     } else {
       setValidEmail(regexEmail.test(email));
     }
   }, [email]);
   useEffect(() => {
     if (pwd === "") {
-      setValidPwd(null); 
+      setValidPwd(null);
     } else {
       setValidPwd(regexPwd.test(pwd));
     }
@@ -53,7 +54,7 @@ const Register = () => {
 
   useEffect(() => {
     if (confirmpwd === "") {
-      setValidConfirmPwd(null); 
+      setValidConfirmPwd(null);
     } else {
       setValidConfirmPwd(pwd === confirmpwd);
     }
@@ -68,27 +69,39 @@ const Register = () => {
             name="email"
             id="email"
             onChange={(e) => setEmail(e.target.value)}
-            className={`border-2 ${
-              validEmail !== null ? (validEmail ? "border-green-500" : "border-red-500") : ""
+            className={`border-2  m-auto ${
+              validEmail !== null
+                ? validEmail
+                  ? "border-green-500"
+                  : "border-red-500"
+                : ""
             }`}
           />
-        
           <span
             className={`text-sm mb-2 ${
               validEmail ? "text-green-600" : "text-red-500"
             }`}
           >
-            {validEmail !== null ? (validEmail ?"Email valide" : "Email non valide") : ""}
+            {validEmail !== null
+              ? validEmail
+                ? "Email valide "
+                : "Email non valide"
+              : ""}
           </span>
+
           <label htmlFor="pwd">Mot de passe</label>
-          <div className=" relative">
+          <div className="relative m-auto">
             <input
               type={eyes ? "text" : "password"}
               name="pwd"
               id="pwd"
               onChange={(e) => setPwd(e.target.value)}
-              className={`border-2 ${
-                validPwd !== null ?  (validPwd ? "border-green-500" : "border-red-500") : ""
+              className={` border-2  m-auto  ${
+                validPwd !== null
+                  ? validPwd
+                    ? "border-green-500"
+                    : "border-red-500"
+                  : ""
               }`}
             />
             <img
@@ -99,14 +112,21 @@ const Register = () => {
               onClick={showPwd}
             />
           </div>
+
           <span
             className={`text-sm mb-2 w-1/2 m-auto ${
-              validPwd !== null ? (validPwd ?  "text-green-600" : "text-red-500") : ""
+              validPwd !== null
+                ? validPwd
+                  ? "text-green-600"
+                  : "text-red-500"
+                : ""
             }`}
           >
-            {validPwd !== null ?
-             (validPwd ?  "Mot de passe valide"
-              : "Mot de passe non valide, minimum 6 caractère, 1 majuscule, 1 minuscule, 1 chiffre, un caractère special : #?!@$ %^&*-") : ""}
+            {validPwd !== null
+              ? validPwd
+                ? "Mot de passe valide"
+                : "Mot de passe non valide, minimum 6 caractère, 1 majuscule, 1 minuscule, 1 chiffre, un caractère special : #?!@$ %^&*-"
+              : ""}
           </span>
           <label htmlFor="confirmPwd">Confirmez le mot de passe</label>
 
@@ -115,12 +135,29 @@ const Register = () => {
             name="confirmPwd"
             id="confirmPwd"
             onChange={(e) => setConfirmPwd(e.target.value)}
-            className={`border-2 ${validConfirmPwd !== null ? (validConfirmPwd ? 'border-green-500' : 'border-red-500') : ""}`}
-            />
-            <span 
-            className={`text-sm mb-2 ${validConfirmPwd !== null ? (validConfirmPwd ?  'text-green-600' : 'text-red-500') : ""}`}>
-            {validConfirmPwd !== null ? (validConfirmPwd ? 'Les mots de passe correspondent' : 'Les mots de passe ne correspondent pas') : ""}
-            </span>
+            className={`border-2 m-auto ${
+              validConfirmPwd !== null
+                ? validConfirmPwd
+                  ? "border-green-500"
+                  : "border-red-500"
+                : ""
+            }`}
+          />
+          <span
+            className={`text-sm mb-2 ${
+              validConfirmPwd !== null
+                ? validConfirmPwd
+                  ? "text-green-600"
+                  : "text-red-500"
+                : ""
+            }`}
+          >
+            {validConfirmPwd !== null
+              ? validConfirmPwd
+                ? "Les mots de passe correspondent"
+                : "Les mots de passe ne correspondent pas"
+              : ""}
+          </span>
         </div>
         <button type="submit" className=" bg-orange-500 rounded-xl p-2 mt-2">
           Je m'inscrit

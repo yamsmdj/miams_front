@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 const index = ({children}) => {
     return (
-        <div className='flex flex-col min-vh-100'>
+        <div className='flex flex-col h-screen'>
             <Navbar />
             {children}
             <Footer />

@@ -48,7 +48,7 @@ const Connexion = () => {
   };
 
   return (
-    <section className=" flex-grow">
+    <section className="grow">
       <form onSubmit={handleLoginSubmit} className=" text-orange-500">
         <Email setEmail={setEmail} />
         <Password setPassword={setPassword} />
