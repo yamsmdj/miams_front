@@ -13,9 +13,7 @@ const Register = () => {
   const [validConfirmPwd, setValidConfirmPwd] = useState(false);
   const [eyes, setEyes] = useState(false);
 
-  const regexEmail = /^[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+$/;
-  const regexPwd =
-    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{6,}$/;
+ 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,19 +36,21 @@ const Register = () => {
   };
 
   useEffect(() => {
+    const regexEmail = /^[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+$/;
     if (email === "") {
       setValidEmail(null);
     } else {
       setValidEmail(regexEmail.test(email));
     }
-  }, [regexEmail,email]);
+  }, [email]);
   useEffect(() => {
+  const regexPwd =/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{6,}$/;
     if (pwd === "") {
       setValidPwd(null);
     } else {
       setValidPwd(regexPwd.test(pwd));
     }
-  }, [regexPwd,pwd]);
+  }, [pwd]);
 
   useEffect(() => {
     if (confirmpwd === "") {
