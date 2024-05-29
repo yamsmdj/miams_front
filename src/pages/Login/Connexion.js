@@ -62,11 +62,15 @@ const Connexion = () => {
           </button>
         </div>
       </form>
+      <form action="?" method="POST">
+      <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+      <br/>
       <ReCAPTCHA
       sitekey= "6LfX_espAAAAAEbwUEU_SIZdZsV9Dze6PHo73OrJ"
       onChange={val => setCapVal(val)}
       />
-      <button disabled={!capVal} type="submit"></button>
+      <input type="submit" value="Submit" disabled={!capVal}/>
+    </form>
       <strong className=" text-orange-500">OU</strong>
       <NavLink to="/register">
         <p className="text-white bg-orange-400">Crée un compte</p>
