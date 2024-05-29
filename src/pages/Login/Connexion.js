@@ -3,13 +3,13 @@ import { NavLink } from "react-router-dom";
 import axios from "axios";
 import Email from "../../components/inputs/Email";
 import Password from "../../components/inputs/Password";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 
 const Connexion = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [capVal, setCapVal] = useState(null);
+  // const [capVal, setCapVal] = useState(null);
   // const currentUrl = window.location.pathname;
 
   const storeToken = (token) => {
@@ -57,20 +57,20 @@ const Connexion = () => {
         <div className="flex flex-col">
           <NavLink to="/register">Mot de passe oublié ?</NavLink>
           {error && <span className="text-red-500">{error}</span>}
+      {/* <div className="g-recaptcha" data-sitekey="6LfX_espAAAAAEbwUEU_SIZdZsV9Dze6PHo73OrJ"></div>
+      <br/>
+      <ReCAPTCHA
+      sitekey= "6LfX_espAAAAAEbwUEU_SIZdZsV9Dze6PHo73OrJ"
+      onChange={val => setCapVal(val)}
+      /> */}
           <button type="submit" className="text-white bg-orange-400 my-3">
             Connexion
           </button>
         </div>
       </form>
-      <form action="?" method="POST">
-      <div class="g-recaptcha" data-sitekey="your_site_key"></div>
-      <br/>
-      <ReCAPTCHA
-      sitekey= "6LfX_espAAAAAEbwUEU_SIZdZsV9Dze6PHo73OrJ"
-      onChange={val => setCapVal(val)}
-      />
-      <input type="submit" value="Submit" disabled={!capVal}/>
-    </form>
+
+
+
       <strong className=" text-orange-500">OU</strong>
       <NavLink to="/register">
         <p className="text-white bg-orange-400">Crée un compte</p>

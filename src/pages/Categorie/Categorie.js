@@ -9,7 +9,7 @@ const Categorie = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/categorie/${categorieId}`)
+      .get(`http://localhost:8000/api/categorie/${categorieId}/`)
       .then((res) => {
         setCategorie(res.data);
       })

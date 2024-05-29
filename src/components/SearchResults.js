@@ -95,6 +95,7 @@ const SearchResults = () => {
         <div>
           <input
             type="search"
+            name="searchbar"
             className="p-3 w-3/12 border border-black rounded-xl"
             placeholder="Une recette ? un ingredient ?"
             onChange={(e) => {

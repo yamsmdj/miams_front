@@ -8,7 +8,7 @@ const Recette = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/recette/title/${recetteTitle}`)
+      .get(`http://localhost:8000/api/recette/title/${recetteTitle}/`)
       .then((res) => {
         setRecettes(res.data);
         console.log('res.data',res.data);
