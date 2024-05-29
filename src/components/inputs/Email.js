@@ -1,16 +1,5 @@
-import { useEffect } from "react";
-
 const Email = ( {setEmail} ) => {
 
-    // const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-
-    // const [emailFocus, setEmailFocus] =useState(false);
-
-
-    // useEffect(() => {
-    //     setValidEmail(emailRegex.test(setemail))
-    // }, [setemail, setValidEmail]);
 
   return (
     <div>

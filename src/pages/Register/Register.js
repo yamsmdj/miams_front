@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import eye from "../../assets/Icons/eye.svg";
-import { NavLink, Navigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import axios from "axios";
 
@@ -43,14 +43,14 @@ const Register = () => {
     } else {
       setValidEmail(regexEmail.test(email));
     }
-  }, [email]);
+  }, [regexEmail]);
   useEffect(() => {
     if (pwd === "") {
       setValidPwd(null);
     } else {
       setValidPwd(regexPwd.test(pwd));
     }
-  }, [pwd]);
+  }, [regexPwd]);
 
   useEffect(() => {
     if (confirmpwd === "") {

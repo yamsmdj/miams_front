@@ -20,7 +20,7 @@ const Moncompte = () => {
       .catch((error) => {
         console.error("Erreur lors de la recuperation de l'user", error);
       });
-  }, []);
+  }, [decodeToken.id]);
 
   const handleValidation = (e) => {
     e.preventDefault(); 

@@ -28,7 +28,7 @@ const Login = () => {
         storeToken(response.data.token);
         window.location.href= "/";
       } else {
-        console.log('Identifiants de connexion invalides.')
+        console.log('Identifiants de connexion invalides.', error)
       }
     }catch (error) {
       console.log("Échec de l'authentification. Veuillez vérifier vos identifiants." , error );

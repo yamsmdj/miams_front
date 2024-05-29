@@ -3,18 +3,15 @@ import { NavLink } from 'react-router-dom';
 import Logo from '../../assets/Icons/Logo.svg'
 
 const Dashboard = () => {
-
-    const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
-    const [showChefDropdown, setShowChefDropdown] = useState(false);
-
     
-    
-    const toggleCategoryDropdown = () => {
-        setShowCategoryDropdown(!showCategoryDropdown);
-    };
-    const toggleChefDropdown = () => {
-        setShowChefDropdown(!showChefDropdown);
-    };
+    // const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
+    // const [showChefDropdown, setShowChefDropdown] = useState(false);      
+    // const toggleCategoryDropdown = () => {
+    //     setShowCategoryDropdown(!showCategoryDropdown);
+    // };
+    // const toggleChefDropdown = () => {
+    //     setShowChefDropdown(!showChefDropdown);
+    // };
 
     return (
         
