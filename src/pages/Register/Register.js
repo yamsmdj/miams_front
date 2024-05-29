@@ -43,14 +43,14 @@ const Register = () => {
     } else {
       setValidEmail(regexEmail.test(email));
     }
-  }, [regexEmail]);
+  }, [regexEmail,email]);
   useEffect(() => {
     if (pwd === "") {
       setValidPwd(null);
     } else {
       setValidPwd(regexPwd.test(pwd));
     }
-  }, [regexPwd]);
+  }, [regexPwd,pwd]);
 
   useEffect(() => {
     if (confirmpwd === "") {
