@@ -3,11 +3,13 @@ import { NavLink } from "react-router-dom";
 import axios from "axios";
 import Email from "../../components/inputs/Email";
 import Password from "../../components/inputs/Password";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Connexion = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [capVal, setCapVal] = useState(null);
   // const currentUrl = window.location.pathname;
 
   const storeToken = (token) => {
@@ -60,6 +62,10 @@ const Connexion = () => {
           </button>
         </div>
       </form>
+      {/* <ReCAPTCHA
+      sitekey= "6Lfi0d4pAAAAAJ5J7KO-blo0I1g9TTLZ3tCX2xu0c"
+      onChange={val => setCapVal(val)}
+      /> */}
       <strong className=" text-orange-500">OU</strong>
       <NavLink to="/register">
         <p className="text-white bg-orange-400">Crée un compte</p>
